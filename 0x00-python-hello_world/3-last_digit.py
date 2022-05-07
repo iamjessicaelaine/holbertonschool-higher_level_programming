@@ -2,7 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 print("Last digit of {:d} is ".format(number), end='')
-num_str = repr(number)
+num_str = str(number)
 negornah = num_str[0]
 lastdig = num_str[-1]
 if negornah == '-':
