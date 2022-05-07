@@ -7,9 +7,9 @@ negornah = num_str[0]
 lastdig_str = num_str[-1]
 lastdig = int(lastdig_str)
 if negornah == '-':
-    print("-{} and is less than 6 and not 0".format(lastdig_str))
+    print("-{:d} and is less than 6 and not 0".format(lastdig))
 else:
-    print("{} ".format(lastdig), end='')
+    print("{:d} ".format(lastdig), end='')
     if lastdig > 5:
         print("and is greater than 5")
     if((lastdig < 6) and (lastdig != 0)):
