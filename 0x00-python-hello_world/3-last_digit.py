@@ -6,7 +6,7 @@ num_str = str(number)
 negornah = num_str[0]
 lastdig = int(num_str[-1])
 if negornah == '-':
-    print("-{} and is less than 6 and not 0".format(lastdig))
+    lastdig = lastdig * -1
 else:
     print("{} ".format(lastdig), end='')
     if lastdig > 5:
