@@ -9,5 +9,5 @@ def square_matrix_simple(matrix=[]):
     # 1st loop access rows, 2nd loop the columns
     for x in range(len(matrix)):
         for i in range(len(matrix[0])):
-            newmatrix[x][i] = matrix[x][i] * matrix[x][i]
+            newmatrix[x][i] = matrix[x][i] ** 2
     return newmatrix
