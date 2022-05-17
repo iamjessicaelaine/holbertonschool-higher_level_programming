@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """an attempt to model a rectangle"""
+    """an attempt to model a rectangle on the backend & front end"""
     def __init__(self, width=0, height=0):  # instantiation w/ optional w & h
         if type(width) != int:
             raise TypeError("width must be an integer")
@@ -53,5 +53,16 @@ class Rectangle:
         else:
             return ((self.__width + self.__height) * 2)
 
-    def __str__(self):
-        
+    def __str__(self):  # return string representation of rct instance
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            rctstr = ""
+            # traverse rectangle like 2d array
+            for row in range(self.__height):
+                for col in range(self.__width):
+                    rctstr += "#"
+                # add new line to end of each row
+                if row != self.__height - 1:
+                    rctstr += "\n"
+            return rctstr
