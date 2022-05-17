@@ -4,7 +4,7 @@
 
 class Square:
     """attempt to model a square"""
-    def __init__(self, size=0): #instantiation happens here
+    def __init__(self, size=0):  # instantiation happens here
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
