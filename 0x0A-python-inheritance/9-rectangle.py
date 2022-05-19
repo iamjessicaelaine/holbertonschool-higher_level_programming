@@ -27,9 +27,15 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
-        # overriding parent's area method for child
-        def area(self):
-            """finds area of rectangle"""
-            return (self.__height * self.__width)
+    # overriding parent's area method for child
+    def area(self):
+        """finds area of rectangle"""
+        return (self.__height * self.__width)
 
-        def __str__(self)
+    def __str__(self):
+        """define what str() returns"""
+        return("[Rectangle] {}/{}".format(self.__width, self.__height))
+
+    def __repr__(self):
+        """defines what print() will print"""
+        print("[Rectangle] {}/{}".format(self.__width, self.__height))
