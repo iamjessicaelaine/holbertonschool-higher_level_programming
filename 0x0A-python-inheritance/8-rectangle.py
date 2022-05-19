@@ -4,6 +4,9 @@
 
 class BaseGeometry:
     """defines a class BaseGeometry"""
+    def __init__(self):
+        """instantiation of class"""
+        pass
 
     def area(self):
         """public instance method"""
