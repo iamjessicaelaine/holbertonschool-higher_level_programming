@@ -5,7 +5,8 @@
 def inherits_from(obj, a_class):
     """did obj inherit from a_class? find out on the next episode of maury"""
     # need to use type() to get class info to compare to a_class
-    if issubclass(type(obj), a_class):  # function will evaluate 2 tru or false
+    # subclass returns true for objs in parent class so check for this also
+    if issubclass(type(obj), a_class) and (type(obj) is not a_class):
         return True
     else:
         return False
