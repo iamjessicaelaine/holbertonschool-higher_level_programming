@@ -30,7 +30,6 @@ class Rectangle(BaseGeometry):
     # overriding parent's area method for child
     def area(self):
         """finds area of rectangle"""
-        
         return (self.__height * self.__width)
 
     def __str__(self):
