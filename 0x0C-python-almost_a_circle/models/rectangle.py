@@ -86,3 +86,16 @@ class Rectangle(Base):
     def area(self):
         """method finds & returns area of rectangle"""
         return (self.__height * self.__width)
+
+    def display(self):
+        """prints Rectangle instance w/ #"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            rectprint = ""
+            for row in range(self.__height):
+                for col in range(self.__width):
+                    rectprint += "#"
+                if row != self.__height - 1:
+                    rectprint += "\n"
+            print(rectprint)
