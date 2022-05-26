@@ -14,15 +14,33 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    def w_h_validate(self, name, value):
+        """method to validate width & height"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+
+    def x_y_validate(self, name, value):
+        """method to validate x & y"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+
 
 class Rectangle(Base):
     """a model of a rectangle who has inherited from it's parent Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """instantiation of child rectangle aka class constructor"""
         super().__init__(id)
+        self.w_h_validate("width", width)
         self.__width = width
+        self.w_h_validate("height", height)
         self.__height = height
+        self.x_y_validate("x", x)
         self.__x = x
+        self.x_y_validate("y", y)
         self.__y = y
 
     @property  # decorator to set width's getter
@@ -31,6 +49,7 @@ class Rectangle(Base):
 
     @width.setter  # decorator to width's setter
     def width(self, value):  # method to change value of width
+        self.w_h_validate("width", value)
         self.__width = value
 
     @property  # decorator to set height's getter
@@ -39,6 +58,7 @@ class Rectangle(Base):
 
     @height.setter  # decorator set height's setter
     def height(self, value):  # method to change value of height
+        self.w_h_validate("height", value)
         self.__height = value
 
     @property
@@ -47,6 +67,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        self.x_y_validate("x", value)
         self.__x = value
 
     @property
@@ -55,4 +76,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self,  value):
+        self.x_y_validate("y", value)
         self.__y = value
