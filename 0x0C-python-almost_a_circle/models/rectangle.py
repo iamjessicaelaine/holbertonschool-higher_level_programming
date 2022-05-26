@@ -2,41 +2,14 @@
 """module defines the rectangle that inherits from Base"""
 
 
-class Base:
-    """the base class, super class, parent class, 1 ring to rule them all"""
-    __nb_objects = 0
-
-    def __init__(self, id=None):
-        """instantiation of base w/ id attribute"""
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
-
-    def w_h_validate(self, name, value):
-        """method to validate width & height"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be > 0".format(name))
-
-    def x_y_validate(self, name, value):
-        """method to validate x & y"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value < 0:
-            raise ValueError("{} must be >= 0".format(name))
-
-    def area(self):
-        """public instance method to be inherited by future kids"""
-        raise Exception("area() is not implemented")
+from models.base import Base
 
 
 class Rectangle(Base):
     """a model of a rectangle who has inherited from it's parent Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """instantiation of child rectangle aka class constructor"""
+        super().__init__(id)
         self.w_h_validate("width", width)
         self.__width = width
         self.w_h_validate("height", height)
@@ -45,7 +18,6 @@ class Rectangle(Base):
         self.__x = x
         self.x_y_validate("y", y)
         self.__y = y
-        super().__init__(id)
 
     @property  # decorator to set width's getter
     def width(self):  # method used to get width
