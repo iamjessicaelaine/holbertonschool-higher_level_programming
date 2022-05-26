@@ -37,7 +37,6 @@ class Rectangle(Base):
     """a model of a rectangle who has inherited from it's parent Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """instantiation of child rectangle aka class constructor"""
-        super().__init__(id)
         self.w_h_validate("width", width)
         self.__width = width
         self.w_h_validate("height", height)
@@ -46,6 +45,7 @@ class Rectangle(Base):
         self.__x = x
         self.x_y_validate("y", y)
         self.__y = y
+        super().__init__(id)
 
     @property  # decorator to set width's getter
     def width(self):  # method used to get width
