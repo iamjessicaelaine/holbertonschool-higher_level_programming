@@ -28,6 +28,10 @@ class Base:
         if value < 0:
             raise ValueError("{} must be >= 0".format(name))
 
+    def area(self):
+        """public instance method to be inherited by future kids"""
+        raise Exception("area() is not implemented")
+
 
 class Rectangle(Base):
     """a model of a rectangle who has inherited from it's parent Base"""
@@ -78,3 +82,7 @@ class Rectangle(Base):
     def y(self,  value):
         self.x_y_validate("y", value)
         self.__y = value
+
+    def area(self):
+        """method finds & returns area of rectangle"""
+        return (self.__height * self.__width)
