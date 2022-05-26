@@ -65,10 +65,14 @@ class Rectangle(Base):
             return ""
         else:
             rectprint = ""
-            for row in range(self.__height):
-                for col in range(self.__width):
+            for yfactor in range(self.__y):
+                rectprint += "\n"
+            for col in range(self.__height):
+                for xfactor in range(self.__x):
+                    rectprint += " "
+                for row in range(self.__width):
                     rectprint += "#"
-                if row != self.__height - 1:
+                if col != self.__height - 1:
                     rectprint += "\n"
             print(rectprint)
 
