@@ -23,5 +23,4 @@ class Student:
 
 def reload_from_json(self, json):
     """replace all attributes with dictionary data"""
-    nofilter = vars(self)
-    nofilter.update(json)
+    self.__dict__.update(json)
