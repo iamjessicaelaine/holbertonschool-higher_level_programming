@@ -13,10 +13,10 @@ class Student:
     def to_json(self, attrs=None):
         """get a dict representation of Student instance w/ filter option"""
         if attrs is None or type(attrs) is not list:
-            dictrep = vars(self)
-            return dictrep
+            return vars(self)
         filterdict = {}
-        for key, value in dictrep.items():
+        nofilter = vars(self)
+        for key, value in nofilter.items():
             if key in attrs:
-                filteredict[key] = value
+                filterdict[key] = value
         return filterdict
