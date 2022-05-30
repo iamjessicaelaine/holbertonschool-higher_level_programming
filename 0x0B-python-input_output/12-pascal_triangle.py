@@ -15,7 +15,7 @@ def pascal_triangle(n):
             # then insert 1 into each sublist for future numbers to follow
             pascslist[i].append(1)
             # loop computes math of other numbers based on pascal's math
-            for j in range(1, i):  # starting @ second element in row do math
+            for j in range(i):  # starting @ second element in row do math
                 pascslist[i].append(pascslist[i-1][j-1] + pascslist[i-1][j])
                 # append 1 to end of list
                 pascslist[i].append(1)
