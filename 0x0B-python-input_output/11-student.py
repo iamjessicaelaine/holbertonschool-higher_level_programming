@@ -21,6 +21,6 @@ class Student:
                 filterdict[key] = value
         return filterdict
 
-def reload_from_json(self, json):
-    """replace all attributes with dictionary data"""
-    self.__dict__.update(json)
+    def reload_from_json(self, json):
+        """replace all attributes with dictionary data"""
+        self.__dict__.update(json)
