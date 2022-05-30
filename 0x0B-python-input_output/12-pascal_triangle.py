@@ -18,6 +18,5 @@ def pascal_triangle(n):
             for j in range(1, i):  # starting @ second element in row do math
                 pascslist[i].append(pascslist[i-1][j-1] + pascslist[i-1][j])
             # append 1 to end of list
-            if (n != 0):
-                pascslist[i].append(1)
+            pascslist[i].append(1)
         return pascslist
