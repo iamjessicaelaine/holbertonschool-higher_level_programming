@@ -22,9 +22,9 @@ class Square(Rectangle):
     def size(self):
         return self.__size
 
-    @size.setter
+    @size.setter # setter for size
     def size(self, value):
         self.w_h_validate("width", value)
+        self.__size = value
         self.__width = value
         self.__height = value
-        self.__size = value
