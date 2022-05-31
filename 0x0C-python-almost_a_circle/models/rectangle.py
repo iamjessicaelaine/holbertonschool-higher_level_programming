@@ -83,3 +83,20 @@ class Rectangle(Base):
                                                                  self.__y,
                                                                  self.__width,
                                                                  self.__height)
+
+    def update(self, *args):
+        """assigns each arg to it's appropro attribute"""
+        index = 0  # use this to keep track of index while moving through args
+
+        for arg in args:  # begin moving through arg tuple
+            if index == 0:
+                self.id = arg
+            if index == 1:  # dont use elif bc need to check each index
+                self.__width = arg
+            if index == 2:
+                self.__height = arg
+            if index == 3:
+                self.__x = arg
+            if index == 4:
+                self.__y = arg
+            index += 1  # increment each index to check for it's existence
