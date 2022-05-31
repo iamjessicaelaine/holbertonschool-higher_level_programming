@@ -49,3 +49,11 @@ class Square(Rectangle):
             if index == 3:
                 self.y = arg
             index += 1  # increment each index to check for it's existence
+
+    def to_dictionary(self):
+        sqrdict = {}
+        sqrdict['id'] = self.id
+        sqrdict['size'] = self.size
+        sqrdict['x'] = self.x
+        sqrdict['y'] = self.y
+        return sqrdict
