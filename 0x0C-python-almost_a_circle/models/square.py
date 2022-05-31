@@ -17,3 +17,14 @@ class Square(Rectangle):
         """overiding str method for square class"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.__x,
                                                          self.__y, self.__size)
+
+    @property  # getter for size
+    def size(self):
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        self.w_h_validate("width", value)
+        self.__width = value
+        self.__height = value
+        self.__size = value
