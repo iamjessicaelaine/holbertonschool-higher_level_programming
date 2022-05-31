@@ -24,3 +24,28 @@ class Square(Rectangle):
         self.w_h_validate("width", value)
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """assigns each arg to it's appropro attribute"""
+        index = 0  # use this to keep track of index while moving through args
+        if len(args) == 0:  # use kwargs only if args doesn't exist
+            for key, value in kwargs.items():  # access key & value or kwargs
+                # assign given values to appropriate attribute based on key
+                if key == 'id':
+                    self.id = value
+                if key == 'x':
+                    self.x = value
+                if key == 'y':
+                    self.y = value
+                if key == 'size':
+                    self.size = value
+        for arg in args:  # begin moving through arg tuple
+            if index == 0:
+                self.id = arg  # arg is an int so it must be assigned to attr.
+            if index == 1:  # dont use elif bc need to check each index
+                self.size = arg
+            if index == 2:
+                self.x = arg
+            if index == 3:
+                self.y = arg
+            index += 1  # increment each index to check for it's existence
