@@ -51,6 +51,7 @@ class Square(Rectangle):
             index += 1  # increment each index to check for it's existence
 
     def to_dictionary(self):
+        """convert square attributes to dictionary"""
         sqrdict = {}
         sqrdict['id'] = self.id
         sqrdict['size'] = self.size
