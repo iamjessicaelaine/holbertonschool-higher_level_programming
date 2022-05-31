@@ -84,13 +84,25 @@ class Rectangle(Base):
                                                                  self.__width,
                                                                  self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns each arg to it's appropro attribute"""
         index = 0  # use this to keep track of index while moving through args
-
+        if len(args) == 0:  # use kwargs only if args doesn't exist
+            for key, value in kwargs.items():  # access key & value or kwargs
+                # assign given values to appropriate attribute based on key
+                if key == 'id':
+                    self.id = value
+                if key == 'x':
+                    self.__x = value
+                if key == 'y':
+                    self.__y = value
+                if key == 'width':
+                    self.__width = value
+                if key == 'height':
+                    self.__height = value
         for arg in args:  # begin moving through arg tuple
             if index == 0:
-                self.id = arg
+                self.id = arg  # arg is an int so it must be assigned to attr.
             if index == 1:  # dont use elif bc need to check each index
                 self.__width = arg
             if index == 2:
