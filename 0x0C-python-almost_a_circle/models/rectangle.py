@@ -114,4 +114,5 @@ class Rectangle(Base):
             index += 1  # increment each index to check for it's existence
 
     def to_dictionary(self):
+        """turn rectangle's attributes into a dictionary"""
         return vars(self)
