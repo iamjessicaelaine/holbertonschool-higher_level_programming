@@ -112,3 +112,6 @@ class Rectangle(Base):
             if index == 4:
                 self.__y = arg
             index += 1  # increment each index to check for it's existence
+
+    def to_dictionary(self):
+        return vars(self)
