@@ -44,3 +44,11 @@ class Base:
         else:
             jsonstr = json.dumps(list_dictionaries)
             return jsonstr
+
+    def from_json_string(json_string):
+        """return a list of json string rep json_string"""
+        if json_string is None:
+            return []
+        else:
+            listrep = json.loads(json_string)
+            return listrep
