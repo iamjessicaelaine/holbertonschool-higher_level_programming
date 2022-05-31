@@ -2,6 +2,9 @@
 """the class that is the base of all other classes"""
 
 
+import json
+
+
 class Base:
     """base class to manage id attribute in all future classes"""
     __nb_objects = 0  # this is a class attribute & a static member of class
@@ -32,3 +35,12 @@ class Base:
     def area(self):
         """public instance method to be inherited by future kids"""
         raise Exception("area() is not implemented")
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """return json string representing a list of dictionaries"""
+        if list_dictionaries is None:
+            return "[]"
+        else:
+            jsonstr = json.dumps(list_dictionaries)
+            return jsonstr
