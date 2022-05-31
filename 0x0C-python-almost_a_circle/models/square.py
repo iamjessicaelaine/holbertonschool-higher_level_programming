@@ -8,15 +8,14 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """a model of a rectangle whse inherited from its parent Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x, y, id)
-        self.__size = size
-        self.__x = x
-        self.__y = y
+        super().__init__(width, height, x, y, id)
+        self.__height = size
+        self.__width = size
 
     def __str__(self):
         """overiding str method for square class"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.__x,
-                                                         self.__y, self.__size)
+                                                         self.__y, self.__width)
 
     @property  # getter for size
     def size(self):
@@ -26,5 +25,4 @@ class Square(Rectangle):
     def size(self, value):
         self.w_h_validate("width", value)
         self.__width = value
-        self.w_h_validate("width", value)
         self.__height = value
