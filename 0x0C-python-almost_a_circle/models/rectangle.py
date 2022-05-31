@@ -115,4 +115,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """turn rectangle's attributes into a dictionary"""
-        return vars(Rectangle)
+        rdict = {}
+        rdict['id'] = self.id
+        rdict['width'] = self.__width
+        rdict['height'] = self.__height
+        rdict['x'] = self.__x
+        rdict['y'] = self.__y
+        return rdict
