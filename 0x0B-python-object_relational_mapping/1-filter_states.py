@@ -12,8 +12,8 @@ if __name__ == "__main__":  # code below doesn't run on import
     # create cursor object so SQl statements can be executed
     cursor = opendb.cursor()
     # time to feed cursor object an SQL query w/ execute method
-    cursor.execute("""SELECT * FROM states WHERE name LIKE 'N%'
-    ORDER BY states.id ASC""")
+    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%'
+    ORDER BY states.id ASC""")  # BINARY forces byte by byte comp of string
     # fetch all rows ffrom the last executed (SQL) statement
     results = cursor.fetchall()
     # looop through results to print each record
