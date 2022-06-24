@@ -9,14 +9,13 @@ if __name__ == "__main__":  # code below doesn't run on import
     # open database connection w/ important parameters
     opendb = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],
                              db=argv[3], port=3306)
-    # assign user input to variable
-    uinput = argv[4]
+    # assign user input to a variable as tuple
+    uinput = (argv[4], )
     # create cursor object so SQl statements can be executed
     cursor = opendb.cursor()
-    # time to feed cursor object an SQL query w/ execute method
+    # time to feed cursor object a parameterized SQL query w/ execute method
     cursor.execute("SELECT * FROM states WHERE name = %s
     ORDER BY states.id ASC", uinput)
-    # BINARY forces byte by byte comp of string
     # fetch all rows ffrom the last executed (SQL) statement
     results = cursor.fetchall()
     # looop through results to print each record
