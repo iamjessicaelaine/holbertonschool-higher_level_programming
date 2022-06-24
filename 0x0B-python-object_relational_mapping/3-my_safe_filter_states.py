@@ -11,7 +11,7 @@ if __name__ == "__main__":  # code below doesn't run on import
                              db=argv[3], port=3306)
     # create cursor object so SQl statements can be executed
     cursor = opendb.cursor()
-    # createparamterized query 
+    # create a paramterized SQL query
     sqlparamquery = """SELECT * FROM states WHERE name = %s"""
     # create tuple of parameter values
     argtuple = (argv[4],)
