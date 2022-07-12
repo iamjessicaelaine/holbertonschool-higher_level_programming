@@ -7,5 +7,5 @@ import requests
 if __name__ == '__main__':
     givenurl = argv[1]
     givenemail = argv[2]
-    response = requests.post(url, data={'email': givenemail})
+    response = requests.post(givenurl, data={'email': givenemail})
     print(response.text)
