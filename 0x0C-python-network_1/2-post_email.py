@@ -7,11 +7,12 @@ from urllib.request import urlopen, Request
 from urlib.parse import urlencode
 from sys import argv
 
-url = argv[1]
-email = argv[2]
-datadict = {'email': email}
-encodeddata = urlencode(datadict)
-utf8data = encodeddata.encode("utf-8")
+if __name__ == '__main__':
+    url = argv[1]
+    email = argv[2]
+    datadict = {'email': email}
+    encodeddata = urlencode(datadict)
+    utf8data = encodeddata.encode("utf-8")
 
-with urlopen(url, data=utf8data) as response:
-    print(response.body.decode("utf-8"))
+    with urlopen(url, data=utf8data) as response:
+        print(response.body.decode("utf-8"))
