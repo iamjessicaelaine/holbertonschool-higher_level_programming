@@ -9,12 +9,12 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    url = argv[1]
+    givenurl = argv[1]
     email = argv[2]
     datadict = {'email': email}
     encodeddata = urlencode(datadict)
     utf8data = encodeddata.encode("utf-8")
 
-    with urlopen(url, data=utf8data) as response:
+    with urlopen(givenurl, data=utf8data) as response:
         body = response.read()
-        print(response.body.decode("utf-8"))
+        print(body.decode("utf-8"))
